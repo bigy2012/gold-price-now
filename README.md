@@ -17,4 +17,7 @@ LINE Notify API Document https://notify-bot.line.me/doc/en/
 
 
 # Preview
-![enter image description here](https://photos.app.goo.gl/gCXX5P4DovfzPcv49)
+![Screenshot 2023-09-20 233428](https://github.com/bigy2012/gold-price-now/assets/121282845/a1ea9d5a-2234-42e9-9199-ad2b2a8a688a)
+
+
+# License
