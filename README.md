@@ -6,5 +6,11 @@
 This system will send a gold price notification once a day, according to the schedule I've set, which is every 24 hours. This means that when the system has been running for a full 24 hours, it will send a notification to LINE once, and it will repeat this process continuously.
 
 
-# Files
+#  How to Install
 
+    pip install python-dotenv
+    pip install requests
+
+
+# Preview
+![enter image description here](https://photos.app.goo.gl/gCXX5P4DovfzPcv49)
