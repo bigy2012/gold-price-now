@@ -3,8 +3,7 @@ import os
 load_dotenv()
 import requests
 import calendar
-from datetime import datetime
-
+import datetime
 
 
 def main(message):
@@ -51,7 +50,7 @@ def checkDate():
 
 if __name__ == '__main__':
         checkDate = checkDate()
-        
+
         if checkDate == True:
             dataGold = getGold()
             if dataGold != 'error':
