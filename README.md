@@ -20,4 +20,9 @@ LINE Notify API Document https://notify-bot.line.me/doc/en/
 ![Screenshot 2023-09-20 233428](https://github.com/bigy2012/gold-price-now/assets/121282845/a1ea9d5a-2234-42e9-9199-ad2b2a8a688a)
 
 
+
 # License
+
+[![Licence](https://img.shields.io/github/license/Ileriayo/markdown-badges?style=for-the-badge)](./LICENSE)
+<hr>
+<hr>
