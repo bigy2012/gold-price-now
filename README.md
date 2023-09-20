@@ -11,6 +11,9 @@ This system will send a gold price notification once a day, according to the sch
     pip install python-dotenv
     pip install requests
 
+# Include Credits
+API GOLD : https://api.chnwt.dev/thai-gold-api/latest
+
 
 # Preview
 ![enter image description here](https://photos.app.goo.gl/gCXX5P4DovfzPcv49)
