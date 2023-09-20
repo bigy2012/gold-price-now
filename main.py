@@ -2,6 +2,10 @@ from dotenv import load_dotenv
 import os 
 load_dotenv()
 import requests
+import calendar
+from datetime import datetime
+
+
 
 def main(message):
     url = os.getenv('URL_LINE_NOTIFY');
@@ -36,24 +40,40 @@ def getGold():
 
     return data['response']
 
+def checkDate():
+        current_time = datetime.datetime.now()
+        past_time = current_time - datetime.timedelta(hours=24)
+        if current_time > past_time:
+            return True
+        else:
+            return False
+
 
 if __name__ == '__main__':
-        dataGold = getGold()
-        if dataGold != 'error':
-            GoldData =  f"{dataGold['date']} \n"\
-                        f"{dataGold['update_time']} \n"\
-                        f"---------------------- \n"\
-                        f"ทองคำแท่ง : รับซื้อ {dataGold['price']['gold_bar']['buy']} \n"\
-                        f"ทองคำแท่ง : ขายออก {dataGold['price']['gold_bar']['sell']} \n"\
-                        f"---------------------- \n"\
-                        f"ทองรูปพรรณ : รับซื้อ {dataGold['price']['gold']['buy']} \n"\
-                        f"ทองรูปพรรณ : ขายออก {dataGold['price']['gold']['sell']} \n"\
-                        f"---------------------- \n"\
-                        f"วันนี้ ขึ้น/ลง : {dataGold['price']['change']['compare_previous']} \n"
-                        
-            msg = {'message': GoldData, "status": "success"}
-            line = main(msg)
+        checkDate = checkDate()
+        
+        if checkDate == True:
+            dataGold = getGold()
+            if dataGold != 'error':
+                GoldData =  f"{dataGold['date']} \n"\
+                            f"{dataGold['update_time']} \n"\
+                            f"---------------------- \n"\
+                            f"ทองคำแท่ง : รับซื้อ {dataGold['price']['gold_bar']['buy']} \n"\
+                            f"ทองคำแท่ง : ขายออก {dataGold['price']['gold_bar']['sell']} \n"\
+                            f"---------------------- \n"\
+                            f"ทองรูปพรรณ : รับซื้อ {dataGold['price']['gold']['buy']} \n"\
+                            f"ทองรูปพรรณ : ขายออก {dataGold['price']['gold']['sell']} \n"\
+                            f"---------------------- \n"\
+                            f"วันนี้ ขึ้น/ลง : {dataGold['price']['change']['compare_previous']} \n"
+                            
+                msg = {'message': GoldData, "status": "success"}
+                line = main(msg)
+            else:
+                msg = {'message': "ไม่สามารถแสดงข้อมูลได้", "status": "error"}
+                line = main(msg)
         else:
-            msg = {'message': "ไม่สามารถแสดงข้อมูลได้", "status": "error"}
-            line = main(msg)
+            print('วันนี้แจ้งราคาทองไปแล้ว')
+             
+
+        
              
