@@ -13,6 +13,7 @@ This system will send a gold price notification once a day, according to the sch
 
 # Include Credits
 API GOLD : https://api.chnwt.dev/thai-gold-api/latest
+LINE Notify API Document https://notify-bot.line.me/doc/en/
 
 
 # Preview
